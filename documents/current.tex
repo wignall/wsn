@@ -18,29 +18,82 @@
 \date{\today}
 \begin{document}
 \maketitle
-\section{Planning}
-\subsection{Timeline}
-Submit for publication: October 1, 2010 (Review of Economics and Statistics?)
-Circulate revised version for feedback: June 1, 2010
-\subsection{Projects}
-\begin{itemize}
-    \item Refresh analysis
-    \item Account for possibility of agents working within in their own wards
-    \item Describe thinness of ward-level housing markets
-\end{itemize}
-\subsection{Next actions}
-\begin{itemize}
-    \item Learn about generated regressors (G)
-    \item Fix server (G)
-    \item Type-up econometric model (C)
-    \item Create reading list (G,C)
-    \item Revise paper (G,C)
-    
-\end{itemize}
-\subsection{Someday/maybe}
-\begin{itemize}
-    \item Test Levitt and Syverson (2008) hypothesis that agents behave more like owners when they work for someone in their congregation.
-\end{itemize}
+%\section{Planning}
+%\subsection{Timeline}
+%Submit for publication: October 1, 2010 (Review of Economics and Statistics?)
+%Circulate revised version for feedback: June 1, 2010
+%\subsection{Projects}
+%\begin{itemize}
+%    \item Refresh analysis
+%    \item Account for possibility of agents working within in their own wards
+%    \item Describe thinness of ward-level housing markets
+%\end{itemize}
+%\subsection{Next actions}
+%\begin{itemize}
+%    \item Learn about generated regressors (G)
+%    \item Fix server (G)
+%    \item Type-up econometric model (C)
+%    \item Create reading list (G,C)
+%    \item Revise paper (G,C)
+%    
+%\end{itemize}
+%\subsection{Someday/maybe}
+%\begin{itemize}
+%    \item Test Levitt and Syverson (2008) hypothesis that agents behave more like owners when they work for someone in their congregation.
+%\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Writing stuff
+%real estate agent, not realtor
+%Ward not congregation
+%homeowner
+%
+%From Cochrane:
+%1. Describe the economic mechanism that caused the dispersion in the RHS variables
+%2. Describe the economic mechanism that constitutes the error term
+%3. Why is the error term uncorrelated with the RHS?
+%6. Describe the source of variation in the data that drives the estimates for every single number presented (across ward? within listing?).
+%7. Whose behavior is being modeled?
+%8. Are you sure about the direction of causality?
+%9. Which controls should be in the regression? Which should not?
+%
+%From colleagues, books:
+%More ``Mormons''
+%Outline Preview
+%Zillow hole
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Research stuff to do and think about
+%Different Logit specifications with robust standard errors
+%Think of alternative hypotheses that need to be ruled out
+%Why include realtor characteristics?
+%Stories
+%Better check of similarity in, out of ward
+%Other NBHD definitions
+%Realtor Geographic specialization (CDF of #wards?)
+%Interpretatione
+%Supply side issues
+%Mismeasurement of wards
+%Outliers
+%Count observations
+%Days on Market
+%Park City vs. Orem
+%Borders
+%Rural vs. Urban
+%Overlapping in time
+%Selling Agent
+%Offices
+%Why drop the first 5 years?
+%Storiesmidrule
+{\abstract
+    We analyze social learning by members of the Church of Jesus Christ of Latter-day Saints (Mormons) as they select
+    real estate agents to list their homes. The Mormon congregation is useful for social analysis: it is important to its members and assigned
+    geographically. We use the geographic relationship between homes to control for selection into wards and show that the average home seller is much
+    more likely to choose the same real estate agent as his neighbor if they are assigned to the same congregation. We also present evidence that some
+    of a neighbor's influence is due to word-of-mouth communication.
+}
+
+
+
 \section{Introduction}
     When an individual chooses among options with unknown payoffs, she can often achieve a better expected payoff by first gathering information from peers who have chosen from the same set of options. Whether such social learning arises from observation or direct communication has important welfare implications. In this paper, we investigate social learning by home owners about the quality of real estate agents as the home owners
     choose agents to list their homes for sale.  We find that social learning in this setting involves word-of-mouth communication and not simply observation of others' choices.
@@ -60,18 +113,18 @@ Circulate revised version for feedback: June 1, 2010
     exogeneity of ward assignment to real estate agent choice arises from the process by which geographic ward boundaries are specified. In
     localities where the concentration of church members is high, the process of ward boundary specification produces wards that typically enclose
     a small geographic area and whose boundaries are not coincident with significant neighborhood boundaries (such as major roads or subdivision
-    boundaries).  We focus on Utah County, Utah were the concentration of Mormons is approximately 89\%\footnote{From the Religious Congregations and
-    Membership in the United States, 2000, collected by Association of Statisticians of American Religious Bodies.}. Consequently, in our sample, a
-    typical home owner will have a set of geographically close neighbors who are fairly homogeneous, some in her ward and some in other wards\footnote{The boundary discontinuity approach here is similar to the use of school district boundaries by Black (1999) to identify the
-    value of public elementary schools to home owners.}.
+    boundaries).  We focus on Utah County, Utah were the concentration of Mormons is approximately 89\%.\footnote{From the Religious Congregations and
+    Membership in the United States, 2000, collected by Association of Statisticians of American Religious Bodies.} Consequently, in our sample, a
+    typical home owner will have a set of geographically close neighbors who are fairly homogeneous, some in her ward and some in other wards.\footnote{The boundary discontinuity approach here is similar to the use of school district boundaries by Black (1999) to identify the
+    value of public elementary schools to home owners.}
 
     We measure the influence of a home owner's peers on his choice of real estate agent. We find that the average home seller is almost twice as
     likely to choose the same real estate agent as a neighbor when they are both assigned to the same ward. In terms of offsetting geography, in order to be as influential as a ward neighbor that is 400 feet away, a neighbor assigned to a different ward must be 30\% closer.
 
     We also present evidence that home sellers respond to peers' private information about the quality of real estate agents, suggesting that at least
     some of the social learning that we find arises from word-of-mouth communication rather than from simply observing peers' behavior. This distinction has important
-    welfare implications since pure observational learning faces a higher probability of an information cascade and inefficient herding\footnote{For
-    an overview of the literature on information cascades, see Bikhchandani et al (1998)}. Furthermore, direct communication between consumers
+    welfare implications since pure observational learning faces a higher probability of an information cascade and inefficient herding.\footnote{For
+    an overview of the literature on information cascades, see Bikhchandani et al (1998)} Furthermore, direct communication between consumers
     concerning personal experience with real estate agents can provide reputational incentives to agents to please each client. These incentives may
     mitigate possible agency problems in real estate brokerage (see Levitt and Syverson, 2008).
 
@@ -166,7 +219,7 @@ Manski (1995)
     Regular participation in one's assigned ward involves frequent personal interaction with
     co-congregants. Since the Mormon Church has no paid clergy at the ward level, the wide array of leadership, teaching and other position are performed by individual lay
     members. For example, all adults are assigned a list of families that they are expected to visit on at least a monthly basis. According to a 2008
-    Survey by the Pew Research Center\footnote{US Religious Landscape Survey, Pew Forum on Religion  and Public Life}, 75\% of (self-reported) Mormons
+    Survey by the Pew Research Center,\footnote{US Religious Landscape Survey, Pew Forum on Religion  and Public Life} 75\% of (self-reported) Mormons
     attend religious services at least once a week and 92\% of them are formal members of their congregations (wards). In addition, 77\% participate
     at least monthly
     in non-worship activities at church, including  63\% participating in social activities at church at least monthly.
@@ -189,12 +242,12 @@ Manski (1995)
 
     A second reason ward boundaries are unlikely to coincide with important discontinuities in the spatial distribution of homes
     is that homogeneity across neighboring wards is an explicit objective of church leaders involved in the specification of ward
-    boundaries\footnote{Based on the authors' private conversations with church leaders.}.  In practice, this means that ward boundaries are likely to
+    boundaries.\footnote{Based on the authors' private conversations with church leaders.}  In practice, this means that ward boundaries are likely to
     cut across neighborhoods.  As an illustration, note that the clusters of very small parcels in Figure 1
     are townhouses.  The townhouses complexes are split and combined with neighboring detached residences to form wards similar in mix of property type.
 
     We are able to determine the ward assignment of each property in our sample
-    using the Church's online ward assignment lookup tool\footnote{Meetinghouse Locator, www.lds.org.}. In Table 2, we present summary statistics on neighbors of a typical listing.  The average listing has 36 neighbors in the same ward and 42
+    using the Church's online ward assignment lookup tool.\footnote{Meetinghouse Locator, www.lds.org.} In Table 2, we present summary statistics on neighbors of a typical listing.  The average listing has 36 neighbors in the same ward and 42
     neighbors assigned to a different ward.  Neighbors in different wards are, on average 40\% farther away than neighbors assigned to the same ward.
     Without conditioning on spatial relationship, a pair of neighbors assigned to the same ward is almost three times more likely to choose the same real estate agent as two neighbors in different
     wards.
@@ -284,7 +337,7 @@ Manski (1995)
     900 feet away is as influential as a non-ward neighbor that is 35\% closer.
 
     As additional evidence that our specification does not suffer from an omitted variable bias, we present the results from a long regression that
-    includes differences in observed characteristics\footnote{See Table 4 for the list of characteristics that are included.}. If we have omitted a
+    includes differences in observed characteristics.\footnote{See Table 4 for the list of characteristics that are included.} If we have omitted a
     relevant neighborhood definition that is correlated with the ward definitions, then our estimate of $\beta$ will be biased. A neighborhood
     boundary is a discontinuous change in home characteristics, so the differences in home characteristics between two neighbors should be correlated
     with any omitted neighborhood definition (the differences should be larger for neighbors on opposite sides of the boundary). Including these
@@ -292,8 +345,8 @@ Manski (1995)
     effect in this long regression is the same as the estimate from the short regression in column 3.
 
     Census blocks are small neighborhoods bounded by geographic features (like roads, streams, and railroad tracks) and political boundaries (like
-    city limits and property lines). In urban areas, the census block is often the same as the city block\footnote{This description of the census
-    block definition is based largely on information available from the US Census Bureau, www.census.gov}. The way the census blocks are defined means
+    city limits and property lines). In urban areas, the census block is often the same as the city block.\footnote{This description of the census
+    block definition is based largely on information available from the US Census Bureau, www.census.gov} The way the census blocks are defined means
     that homes in the same block are likely to be very similar in unobserved characteristics. In column 7 of Table 5, we present estimates of equation 1
     on a subsample restricted to neighbors in the same census block. The persistence of the ward effect is additional evidence that our results are
     not due to bias from some omitted neighborhood definition.
@@ -366,7 +419,7 @@ similar to those in column 1.
 \section{Conclusion}
 We have presented evidence of word-of-mouth learning in a social network.  The principal challenges to identification of this type of social effect
 are distinguishing which individuals are peers and separating social effects from correlations in behavior of peers that arise from unobserved
-similarities\footnote{See Manski (2000).}.  We address both of these issues by taking Mormon wards as our setting.  The ward constitutes a social
+similarities.\footnote{See Manski (2000).}  We address both of these issues by taking Mormon wards as our setting.  The ward constitutes a social
 network for which the group composition is known and for which we can construct a control group of individuals who differ essentially from ward
 members only in their ward assignment.
 
