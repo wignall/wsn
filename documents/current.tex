@@ -1,96 +1,62 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath, amsthm, amssymb}
+% AEJ-Article.tex for AEA last revised 22 June 2011
+\documentclass[AEJ,draftmode]{AEA}
+%\usepackage{amsmath, amsthm, amssymb}
 \usepackage{pdflscape}
-\usepackage{graphicx}
+%\usepackage{datetime}
+%\usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{rotating}
 \usepackage{harvard}
 \usepackage{amssymb}
 \usepackage{amsfonts}
-\newtheorem{proposition}{Proposition}
+%\newtheorem{proposition}{Proposition}
 \newcommand{\se}[1]{\footnotesize{(#1)}}
 \newcommand{\fn}[1]{\footnotesize{#1}}
 \newcommand{\capbot}[1]{\vspace{8pt}\footnotesize\raggedright #1}
 
-\title{Word-of-Mouth Learning in Social Networks\thanks{We thank Eli Berman, Grayson Calhoun, Gordon Dahl, Samuel Dastrup, Silke Forbes and Joel Watson for advice and helpful comments.  We are grateful to the Wasatch Front Regional Multiple Listings Service for data access.  Financial Support from the California Association of Realtors is gratefully acknowledged.}}
-\author{Graton Gathright and Christopher Wignall}
-\date{\today}
+% The mathtime package uses a Times font instead of Computer Modern.
+% Uncomment the line below if you wish to use the mathtime package:
+%\usepackage[cmbold]{mathtime}
+% Note that miktex, by default, configures the mathtime package to use commercial fonts
+% which you may not have. If you would like to use mathtime but you are seeing error
+% messages about missing fonts (mtex.pfb, mtsy.pfb, or rmtmi.pfb) then please see
+% the technical support document at http://www.aeaweb.org/templates/technical_support.pdf
+% for instructions on fixing this problem.
+
+% Note: you may use either harvard or natbib (but not both) to provide a wider
+% variety of citation commands than latex supports natively. See below.
+
+% Uncomment the next line to use the natbib package with bibtex 
+%\usepackage{natbib}
+
+% Uncomment the next line to use the harvard package with bibtex
+%\usepackage[abbr]{harvard}
+
+% This command determines the leading (vertical space between lines) in draft mode
+% with 1.5 corresponding to "double" spacing.
+\draftSpacing{1.5}
+
 \begin{document}
+
+\title{Word-of-Mouth Learning in Social Networks}
+\shortTitle{Word-of-Mouth Learning}
+\author{Graton Gathright and Christopher Wignall\thanks{%
+Gathright: U.S. Census Bureau, 4600 Silver Hill Rd, Suitland, MD 20746, graton.m.gathright@census.gov. Wignall: U.S. Census Bureau, 4600 Silver Hill Rd, Suitland, MD 20746, christopher.d.wignall@census.gov. We thank Eli Berman, Grayson Calhoun, Gordon Dahl, Samuel Dastrup, Silke Forbes and Joel Watson for advice and helpful comments.  We are grateful to the Wasatch Front Regional Multiple Listings Service for data access.  Financial Support from the California Association of Realtors is gratefully acknowledged.}}
+\date{\today}
+%\pubMonth{Month}
+%\pubYear{Year}
+%\pubVolume{Vol}
+%\pubIssue{Issue}
+\JEL{}
+\Keywords{}
+
+\begin{abstract}
+We analyze social learning by members of the Church of Jesus Christ of Latter-day Saints (Mormons) as they select real estate agents to list their homes. The Mormon congregation is useful for social analysis: it is important to its members and assigned geographically. We use the geographic relationship between homes to control for selection into wards and show that the average home seller is much more likely to choose the same real estate agent as his neighbor if they are assigned to the same congregation. We also present evidence that some of a neighbor's influence is due to word-of-mouth communication.
+\end{abstract}
+
 \maketitle
-%\section{Planning}
-%\subsection{Timeline}
-%Submit for publication: October 1, 2010 (Review of Economics and Statistics?)
-%Circulate revised version for feedback: June 1, 2010
-%\subsection{Projects}
-%\begin{itemize}
-%    \item Refresh analysis
-%    \item Account for possibility of agents working within in their own wards
-%    \item Describe thinness of ward-level housing markets
-%\end{itemize}
-%\subsection{Next actions}
-%\begin{itemize}
-%    \item Learn about generated regressors (G)
-%    \item Fix server (G)
-%    \item Type-up econometric model (C)
-%    \item Create reading list (G,C)
-%    \item Revise paper (G,C)
-%    
-%\end{itemize}
-%\subsection{Someday/maybe}
-%\begin{itemize}
-%    \item Test Levitt and Syverson (2008) hypothesis that agents behave more like owners when they work for someone in their congregation.
-%\end{itemize}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Writing stuff
-%real estate agent, not realtor
-%Ward not congregation
-%homeowner
-%
-%From Cochrane:
-%1. Describe the economic mechanism that caused the dispersion in the RHS variables
-%2. Describe the economic mechanism that constitutes the error term
-%3. Why is the error term uncorrelated with the RHS?
-%6. Describe the source of variation in the data that drives the estimates for every single number presented (across ward? within listing?).
-%7. Whose behavior is being modeled?
-%8. Are you sure about the direction of causality?
-%9. Which controls should be in the regression? Which should not?
-%
-%From colleagues, books:
-%More ``Mormons''
-%Outline Preview
-%Zillow hole
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Research stuff to do and think about
-%Different Logit specifications with robust standard errors
-%Think of alternative hypotheses that need to be ruled out
-%Why include realtor characteristics?
-%Stories
-%Better check of similarity in, out of ward
-%Other NBHD definitions
-%Realtor Geographic specialization (CDF of #wards?)
-%Interpretatione
-%Supply side issues
-%Mismeasurement of wards
-%Outliers
-%Count observations
-%Days on Market
-%Park City vs. Orem
-%Borders
-%Rural vs. Urban
-%Overlapping in time
-%Selling Agent
-%Offices
-%Why drop the first 5 years?
-%Storiesmidrule
-{\abstract
-    We analyze social learning by members of the Church of Jesus Christ of Latter-day Saints (Mormons) as they select real estate agents to list their homes. The Mormon congregation is useful for social analysis: it is important to its members and assigned geographically. We use the geographic relationship between homes to control for selection into wards and show that the average home seller is much more likely to choose the same real estate agent as his neighbor if they are assigned to the same congregation. We also present evidence that some of a neighbor's influence is due to word-of-mouth communication.
-}
-
-
-
-\section{Introduction}
 	[Succinct statement of main results.]
 
     When an individual chooses among options with unknown payoffs, she can often achieve a better expected payoff by first gathering information from peers who have chosen from the same set of options. Whether such social learning arises from observation or direct communication has important welfare implications. [DEVELOP FURTHER]
@@ -106,37 +72,10 @@
     We also present evidence that home sellers respond to peers' private information about the quality of real estate agents, suggesting that at least some of the social learning that we find arises from word-of-mouth communication rather than from simply observing peers' behavior. This distinction has important welfare implications since pure observational learning faces a higher probability of an information cascade and inefficient herding.\footnote{For an overview of the literature on information cascades, see Bikhchandani et al (1998)} Furthermore, direct communication between consumers concerning personal experience with real estate agents can provide reputational incentives to agents to please each client. These incentives may mitigate possible agency problems in real estate brokerage (see Levitt and Syverson, 2008).
     
     Researchers have employed a variety of approaches to estimating social effects in the presence of omitted variables. For example, Duflo and Saez (2003) treat employees of academic departments at a large university as peers and use a randomization experiment to evaluate peer effects on attendance at a retirement benefits information fair. Sorensen (2006) looks at health plan choice by employees within academic departments of the University of California system. He uses the panel structure of his data to account for the unobserved heterogeneity between departments.  Bayer et al (2005) and Hellerstein et al (2008) treat census blocks and tracts, respectively, as social networks where peers may learn  about job opportunities.
-    
-%\section{Related Literature}
-%Boundary discontinuity
-%Black (1999)
-%
-%Information cascades and herding
-%Bikhchandani et al (1998)
-%
-%Real estate brokerage/agency problems
-%Levitt and Syverson (2008)
-%
-%Peer effects
-%Duflo and Saez (2003)
-%Sorenson (2006)
-%Grinblatt et al (2008)
-%Bayer, Ross and Topa (2008)
-%Conley and Udry (2010)
-%    
-%Economics of religion
-%Iannaccone, 1992
-%
-%Market intermediation
-%
-%Reputational restraints on agency problems
-%
-%Peer effects
-%Manski (1995)
 
 \section{Background and Data}
 
-\subsection*{Real Estate Brokerage}
+\subsection{Real Estate Brokerage}
     Nationwide, most home sellers employ a real estate agent to list their home. The contract between a home seller and her real estate agent is  called a listing agreement. These contracts typically stipulate that the real estate agent will market the home in exchange for a payment, due at  closing, that is expressed as a percentage of the sales price.
 
     Virtually all real estate agents who list homes in Utah County belong to the only multiple listings service operating in the county, the Wasatch  Front Regional Multiple Listings Service (WFRMLS).  WFRMLS requires that its member agents add their new listings to the WFRMLS database within 72 hours of signing a listing agreement. We use data on all listings in the WFRMLS database of single family residences in Utah County from 1997-2006.
@@ -149,7 +88,7 @@
 
     In Table 1, we present summary statistics on the characteristics of the homes in our sample of listings. The mean list price in our sample is \$216,065.  Fifty-nine percent of the listings result in a sale, and the mean sales price is \$192,833.
 
-\subsection*{Mormon Wards as Social Networks}
+\subsection{Mormon Wards as Social Networks}
 
     Mormon wards are well-suited as a setting for investigating peer effects. Wards are important social networks to those who belong to them, and the assignment of neighboring church members to wards is essentially random, conditional on the spatial relationship between homes.
 
@@ -169,7 +108,7 @@
 
 \section{Estimation and Identification}
 
-\subsection*{Empirical Approach}
+\subsection{Empirical Approach}
 
     Our objective is to evaluate how individuals are influenced by members of their social network in selecting a real estate agent to help sell a home. If a home seller learns about real estate agent quality through her social network, then her choice of real estate agent is more likely to be influenced by the choices of neighbors who belong to her social network.
 
@@ -179,7 +118,7 @@
 
     The direct communication hypothesis provides a second prediction. If social learning occurs through direct communication about personal experience with agents, then a home seller is more likely to choose the same agent as a neighbor when the neighbor's experience with the agent was positive. The home seller is less likely to choose the same agent as a neighbor whose experience with his agent was negative. If direct communication is more likely to occur between neighbors who belong to the same social network, then the effect of a neighbor's experience on the home seller's choice of agent will be stronger if they belong to the same social network.
     
-        To evaluate the influence of ward peers on real estate agent choice, we estimate the probability that a home seller chooses the same real estate agent as her neighbor. If ward members learn from each other, then the probability that neighbors choose the same real estate agent should differ depending on whether they are assigned to the same ward. We begin by estimating the following linear probability model:
+    To evaluate the influence of ward peers on real estate agent choice, we estimate the probability that a home seller chooses the same real estate agent as her neighbor. If ward members learn from each other, then the probability that neighbors choose the same real estate agent should differ depending on whether they are assigned to the same ward. We begin by estimating the following linear probability model:
     \begin{equation}
         P(i\ and\ j\ choose\ the\ same\ agent) = \alpha + \beta W_{ij} + \gamma_1 D_{ij} + \gamma_2 D^2_{ij}  + \gamma_3 N_{ij} + \epsilon_{ij}
     \end{equation}
@@ -189,8 +128,7 @@
 
     The estimation results for this specification are reported and discussed in Section 5 below.
 
-    To test whether the social learning in this setting arises from word-of-mouth information transmission we estimate the following variation on the
-    regression in equation (1):
+    To test whether the social learning in this setting arises from word-of-mouth information transmission we estimate the following variation on the regression in equation (1):
     \[ P_{ij} = \alpha + \beta W_{ij} + \gamma_1 D_{ij} + \gamma_2 D^2_{ij} + \gamma_3 N_{ij} + \delta_1 G_j +
     \delta_2 B_j + \delta_3 W_{ij} * G_j + \delta_4 W_{ij} * B_j + \epsilon_{ij} \]
     where $G_j = 1$ if neighbor $j$ had a good outcome (and therefore has positive information to report) and $B_j = 1$ if neighbor $j$ had a bad
@@ -198,7 +136,7 @@
 
     The estimation results for this specification are presented in Section 6.
 
-\subsection*{Identification}
+\subsection{Identification}
 
     We want to identify the impact of a neighbor's choice of real estate agent on a home seller's choice of real estate agent.  The principal threat to identification in our setting is what Manski (1995) calls \emph{correlated effects}.  If a home owner's neighbors who are assigned to his ward have homes that are systematically different than the homes of his neighbors who are assigned to different wards, then the effect that we estimate may represent correlations in behaviour due to correlations in unobserved home characteristics.  An example of such an effect is small scale geographic specialization and marketing by agents to particular neighborhoods or types of homes.
 
@@ -250,7 +188,6 @@
     We have exploited the geographic assignment of Mormons to congregations to identify social effects in real estate agent choice.  There are many other decisions of economic importance that may be subject to social effects.  The natural experiment investigated here holds promise for identifying social effects in many such decisions.
 
 
-\pagebreak
 
 
 \begin{table}[ht]
@@ -258,8 +195,8 @@
     \caption{Summary Statistics of Homes}
     \begin{tabular}{@{}lccc@{}} \toprule
         Variable        & Mean      & Standard Deviation    & Median \\ \midrule
-        List Price      & 216065    & 125632                & 174900 \\
-        Square Feet     & 2675      & 1255                  & 2416 \\
+        List Price      & \$216,065 & \$125,632             & \$174,900 \\
+        Square Feet     & 2,675     & 1,255                 & 2,416 \\
         Acres           & 0.35      & 1.0                   & 0.22 \\
         Bedrooms        & 3.9       & 1.2                   & 4 \\
         Bathrooms       & 2.5       & 1.0                   & 2 \\
@@ -270,7 +207,7 @@
         Fire Places     & 0.64      & 0.76                  & 0 \\
         Year Built      & 1984      & 23                    & 1994 \\
         Sold Indicator  & 0.59      & 0.49                  & 1 \\
-        Sold Price      & 192833    & 99903                 & 163000 \\ \bottomrule
+        Sold Price      & \$192,833 & \$99,903              & \$163,000 \\ \bottomrule
     \end{tabular}
     \begin{minipage}{.88\hsize}
     {\footnotesize Note -- Data are from the Wasatch Front Regional Multiple Listing Service and include single family residences listed in Utah County between 1997 and 2007.}
@@ -297,7 +234,7 @@
         \multirow{3}{*}{Distance Between Neighbors} & 0.49    & 0.71        & 0.48              & 0.58 \\
                                                     & \se{0.25}     & \se{0.21}         & \se{0.26}                & \se{0.26} \\
                                                              & 0.47     & 0.75        & 0.46                 & 0.59 \\ \addlinespace
-        \multirow{3}{*}{Percent that Chose the Same Agent}   & 2.8      & 1.0         & 3.0               & 2.5 \\
+        \multirow{3}{*}{Percent that Chose the Same Agent}   & 2.8\%    & 1.0\%       & 3.0\%             & 2.5\% \\
                                                              & \se{9.9}      & \se{4.6}         & \se{11}                & \se{9.8} \\
                                                              & 0        & 0           & 0                 & 0 \\
         \bottomrule
@@ -354,18 +291,18 @@ Patio           & 0.450 & 0.441 & 0.009        & 15.7     &  0.494\\\bottomrule
 \end{minipage}
 \end{table}
 %
-\begin{figure}
-    \centering
-    \caption{Ward assignment of homes in a Utah County neighborhood.}
-    \includegraphics[width=6in]{imthemap.pdf}
-
-\end{figure}
-\begin{figure}
-    \centering
-    \caption{Histogram of Distances between neighbors in the same and in different wards.}
-    \includegraphics[width=6in]{Distance_Histograms.png}
-
-\end{figure}
+%\begin{figure}
+%    \centering
+%    \caption{Ward assignment of homes in a Utah County neighborhood.}
+%    \includegraphics[width=6in]{imthemap.pdf}
+%
+%\end{figure}
+%\begin{figure}
+%    \centering
+%    \caption{Histogram of Distances between neighbors in the same and in different wards.}
+%    \includegraphics[width=6in]{Distance_Histograms.png}
+%
+%\end{figure}
 
 
 \begin{sidewaystable}[ht]
@@ -434,5 +371,558 @@ R$^2$                                    & 0.014     &  0.014    & 0.014     &  
 }
 \end{minipage}
 \end{sidewaystable}
+
+
+
+
+
+
+
+
+
+
+
+
+%American Economics Journal Pointers:
+%
+%\begin{itemize}
+%\item Do not use an "Introduction" heading. Begin your introductory material
+%before the first section heading.
+%
+%\item Avoid style markup (except sparingly for emphasis).
+%
+%\item Avoid using explicit vertical or horizontal space.
+%
+%\item Captions are short and go below figures but above tables.
+%
+%\item The tablenotes or figurenotes environments may be used below tables
+%or figures, respectively, as demonstrated below.
+%
+%\item If you have difficulties with the mathtime package, adjust the package
+%options appropriately for your platform. If you can't get it to work, just
+%remove the package or see our technical support document online (please
+%refer to the author instructions).
+%
+%\item If you are using an appendix, it goes last, after the bibliography.
+%Use regular section headings to make the appendix headings.
+%
+%\item If you are not using an appendix, you may delete the appendix command
+%and sample appendix section heading.
+%
+%\item Either the natbib package or the harvard package may be used with bibtex.
+%To include one of these packages, uncomment the appropriate usepackage command
+%above. Note: you can't use both packages at once or compile-time errors will result.
+%
+%\end{itemize}
+%
+%\section{First Section in Body}
+%
+%Sample figure:
+%
+%\begin{figure}
+%Figure here.
+%
+%\caption{Caption for figure below.}
+%\begin{figurenotes}
+%Figure notes without optional leadin.
+%\end{figurenotes}
+%\begin{figurenotes}[Source]
+%Figure notes with optional leadin (Source, in this case).
+%\end{figurenotes}
+%\end{figure}
+%
+%Sample table:
+%
+%\begin{table}
+%\caption{Caption for table above.}
+%
+%\begin{tabular}{lll}
+%& Heading 1 & Heading 2 \\ 
+%Row 1 & 1 & 2 \\ 
+%Row 2 & 3 & 4%
+%\end{tabular}
+%\begin{tablenotes}
+%Table notes environment without optional leadin.
+%\end{tablenotes}
+%\begin{tablenotes}[Source]
+%Table notes environment with optional leadin (Source, in this case).
+%\end{tablenotes}
+%\end{table}
+%
+%References here (manual or bibTeX). If you are using bibTeX, add your bib file 
+%name in place of BibFile in the bibliography command.
+% Remove or comment out the next two lines if you are not using bibtex.
+%\bibliographystyle{aea}
+%\bibliography{BibFile}
+
+% The appendix command is issued once, prior to all appendices, if any.
+%\appendix
+%
+%\section{Mathematical Appendix}
+
 \end{document}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%
+%
+%\documentclass[12pt]{article}
+%\usepackage{amsmath, amsthm, amssymb}
+%\usepackage{pdflscape}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{multirow}
+%\usepackage{rotating}
+%\usepackage{harvard}
+%\usepackage{amssymb}
+%\usepackage{amsfonts}
+%\newtheorem{proposition}{Proposition}
+%\newcommand{\se}[1]{\footnotesize{(#1)}}
+%\newcommand{\fn}[1]{\footnotesize{#1}}
+%\newcommand{\capbot}[1]{\vspace{8pt}\footnotesize\raggedright #1}
+%
+%\title{Word-of-Mouth Learning in Social Networks\thanks{We thank Eli Berman, Grayson Calhoun, Gordon Dahl, Samuel Dastrup, Silke Forbes and Joel Watson for advice and helpful comments.  We are grateful to the Wasatch Front Regional Multiple Listings Service for data access.  Financial Support from the California Association of Realtors is gratefully acknowledged.}}
+%\author{Graton Gathright and Christopher Wignall}
+%\date{\today}
+%\begin{document}
+%\maketitle
+%%\section{Planning}
+%%\subsection{Timeline}
+%%Submit for publication: October 1, 2010 (Review of Economics and Statistics?)
+%%Circulate revised version for feedback: June 1, 2010
+%%\subsection{Projects}
+%%\begin{itemize}
+%%    \item Refresh analysis
+%%    \item Account for possibility of agents working within in their own wards
+%%    \item Describe thinness of ward-level housing markets
+%%\end{itemize}
+%%\subsection{Next actions}
+%%\begin{itemize}
+%%    \item Learn about generated regressors (G)
+%%    \item Fix server (G)
+%%    \item Type-up econometric model (C)
+%%    \item Create reading list (G,C)
+%%    \item Revise paper (G,C)
+%%    
+%%\end{itemize}
+%%\subsection{Someday/maybe}
+%%\begin{itemize}
+%%    \item Test Levitt and Syverson (2008) hypothesis that agents behave more like owners when they work for someone in their congregation.
+%%\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%Writing stuff
+%%real estate agent, not realtor
+%%Ward not congregation
+%%homeowner
+%%
+%%From Cochrane:
+%%1. Describe the economic mechanism that caused the dispersion in the RHS variables
+%%2. Describe the economic mechanism that constitutes the error term
+%%3. Why is the error term uncorrelated with the RHS?
+%%6. Describe the source of variation in the data that drives the estimates for every single number presented (across ward? within listing?).
+%%7. Whose behavior is being modeled?
+%%8. Are you sure about the direction of causality?
+%%9. Which controls should be in the regression? Which should not?
+%%
+%%From colleagues, books:
+%%More ``Mormons''
+%%Outline Preview
+%%Zillow hole
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%Research stuff to do and think about
+%%Different Logit specifications with robust standard errors
+%%Think of alternative hypotheses that need to be ruled out
+%%Why include realtor characteristics?
+%%Stories
+%%Better check of similarity in, out of ward
+%%Other NBHD definitions
+%%Realtor Geographic specialization (CDF of #wards?)
+%%Interpretatione
+%%Supply side issues
+%%Mismeasurement of wards
+%%Outliers
+%%Count observations
+%%Days on Market
+%%Park City vs. Orem
+%%Borders
+%%Rural vs. Urban
+%%Overlapping in time
+%%Selling Agent
+%%Offices
+%%Why drop the first 5 years?
+%%Storiesmidrule
+%{\abstract
+%    We analyze social learning by members of the Church of Jesus Christ of Latter-day Saints (Mormons) as they select real estate agents to list their homes. The Mormon congregation is useful for social analysis: it is important to its members and assigned geographically. We use the geographic relationship between homes to control for selection into wards and show that the average home seller is much more likely to choose the same real estate agent as his neighbor if they are assigned to the same congregation. We also present evidence that some of a neighbor's influence is due to word-of-mouth communication.
+%}
+%
+%
+%
+%\section{Introduction}
+%	[Succinct statement of main results.]
+%
+%    When an individual chooses among options with unknown payoffs, she can often achieve a better expected payoff by first gathering information from peers who have chosen from the same set of options. Whether such social learning arises from observation or direct communication has important welfare implications. [DEVELOP FURTHER]
+%    
+%    A significant identification problem is endemic to studying peer effects such as social learning: unobserved characteristics that influence behavior may also influence which relationships form (see \citeasnoun{manski1995}). If some omitted variable leads two people to make similar decisions and also increases the probability that they become peers, then estimates of the peer effect will be biased upward. For example, if people with tastes for risky behavior are more likely to smoke and also tend to be friends with other risk lovers, then estimates of peer influence on smoking that fail to account for risk preferences will exhibit a positive omitted variable bias.\footnote{Replace this example with an example from our setting.}
+%
+%    We address this endogeneity issue by studying social networks which are formed by a process that is plausibly exogenous to real estate agent choice. The social networks that we investigate are congregations of The Church of Jesus Christ of Latter-day Saints (Mormon). These congregations, called \emph{wards}, are defined geographically in a manner such that, conditional on geography, the assignment of homes to wards does not suffer from an unobserved selection process. As a result, once we control for the geographic selection of homes into wards, we can treat the assignment of residents to wards as essentially random, and we can identify the effect of social learning on the choice of real estate agents by home sellers.
+%
+%    Each Mormon ward is defined by a set of geographic boundaries, and each church member is assigned to the ward in which he resides. The exogeneity of ward assignment to real estate agent choice arises from the process by which geographic ward boundaries are specified. In localities where the concentration of church members is high, the process of ward boundary specification produces wards that typically enclose a small geographic area and whose boundaries are not coincident with significant neighborhood boundaries (such as major roads or subdivision boundaries).  We focus on Utah County, Utah were the concentration of Mormons is approximately 89\%.\footnote{From the Religious Congregations and Membership in the United States, 2000, collected by Association of Statisticians of American Religious Bodies.}
+%
+%    In this paper, we investigate social learning by home owners about the quality of real estate agents as the home owners choose agents to list their homes for sale.  Specifically, we measure the influence of a home owner's ward peers on his choice of real estate agent. We find that the average home seller is almost twice as likely to choose the same real estate agent as a neighbor when they are both assigned to the same ward. In terms of offsetting geography, in order to be as influential as a ward neighbor that is 400 feet away, a neighbor assigned to a different ward must be 30\% closer.
+%
+%    We also present evidence that home sellers respond to peers' private information about the quality of real estate agents, suggesting that at least some of the social learning that we find arises from word-of-mouth communication rather than from simply observing peers' behavior. This distinction has important welfare implications since pure observational learning faces a higher probability of an information cascade and inefficient herding.\footnote{For an overview of the literature on information cascades, see Bikhchandani et al (1998)} Furthermore, direct communication between consumers concerning personal experience with real estate agents can provide reputational incentives to agents to please each client. These incentives may mitigate possible agency problems in real estate brokerage (see Levitt and Syverson, 2008).
+%    
+%    Researchers have employed a variety of approaches to estimating social effects in the presence of omitted variables. For example, Duflo and Saez (2003) treat employees of academic departments at a large university as peers and use a randomization experiment to evaluate peer effects on attendance at a retirement benefits information fair. Sorensen (2006) looks at health plan choice by employees within academic departments of the University of California system. He uses the panel structure of his data to account for the unobserved heterogeneity between departments.  Bayer et al (2005) and Hellerstein et al (2008) treat census blocks and tracts, respectively, as social networks where peers may learn  about job opportunities.
+%    
+%%\section{Related Literature}
+%%Boundary discontinuity
+%%Black (1999)
+%%
+%%Information cascades and herding
+%%Bikhchandani et al (1998)
+%%
+%%Real estate brokerage/agency problems
+%%Levitt and Syverson (2008)
+%%
+%%Peer effects
+%%Duflo and Saez (2003)
+%%Sorenson (2006)
+%%Grinblatt et al (2008)
+%%Bayer, Ross and Topa (2008)
+%%Conley and Udry (2010)
+%%    
+%%Economics of religion
+%%Iannaccone, 1992
+%%
+%%Market intermediation
+%%
+%%Reputational restraints on agency problems
+%%
+%%Peer effects
+%%Manski (1995)
+%
+%\section{Background and Data}
+%
+%\subsection*{Real Estate Brokerage}
+%    Nationwide, most home sellers employ a real estate agent to list their home. The contract between a home seller and her real estate agent is  called a listing agreement. These contracts typically stipulate that the real estate agent will market the home in exchange for a payment, due at  closing, that is expressed as a percentage of the sales price.
+%
+%    Virtually all real estate agents who list homes in Utah County belong to the only multiple listings service operating in the county, the Wasatch  Front Regional Multiple Listings Service (WFRMLS).  WFRMLS requires that its member agents add their new listings to the WFRMLS database within 72 hours of signing a listing agreement. We use data on all listings in the WFRMLS database of single family residences in Utah County from 1997-2006.
+%
+%    The data from WFRMLS for each listing include home characteristics (square footage, number of bedrooms, street address, etc.) and identifying information for the agents involved in the transaction. Each record also includes the date the property was listed and the asking price. For properties that resulted in a sale, we also have the sales price.
+%
+%    Because of the large number of listings in our sample, it is not computationally feasible to evaluate the relationship between every pair of listings. We limit our attention to pairs of listings that are located within one quarter mile and listed within five years of each other, and we call such pairs \emph{neighbors}.
+%
+%    We employ several measures of geographic location of listings to account for the spatial relationship between properties.  Based on street address, we place each listing on a map and calculate the distance between each pair of neighbors.  Second, using geographic data from the Utah County Department of Information Systems, we determine whether each pair of homes is assigned to the same county-defined neighborhood. The county's neighborhood definitions correspond to contiguous parcels of land that were developed contemporaneously.  Finally, we use data from the U.S. Census Bureau (TigerLine) to determine whether neighbors belong to the same census block.
+%
+%    In Table 1, we present summary statistics on the characteristics of the homes in our sample of listings. The mean list price in our sample is \$216,065.  Fifty-nine percent of the listings result in a sale, and the mean sales price is \$192,833.
+%
+%\subsection*{Mormon Wards as Social Networks}
+%
+%    Mormon wards are well-suited as a setting for investigating peer effects. Wards are important social networks to those who belong to them, and the assignment of neighboring church members to wards is essentially random, conditional on the spatial relationship between homes.
+%
+%    Regular participation in one's assigned ward involves frequent personal interaction with co-congregants. Since the Mormon Church has no paid clergy at the ward level, the wide array of leadership, teaching and other position are performed by individual lay members. For example, all adults are assigned a list of families that they are expected to visit on at least a monthly basis. According to a 2008 Survey by the Pew Research Center,\footnote{US Religious Landscape Survey, Pew Forum on Religion  and Public Life} 75\% of (self-reported) Mormons attend religious services at least once a week and 92\% of them are formal members of their congregations (wards). In addition, 77\% participate at least monthly in non-worship activities at church, including  63\% participating in social activities at church at least monthly.  %We should include the chart or at least some comparisons - not everyone will realize how high this is.
+%
+%    There are at least two important reasons that, virtually without exception, practicing Mormons participate in the ward to which they are assigned. First, as mentioned above, the vast majority of church responsibilities are fulfilled by individual members. A church member is not typically eligible to perform any of these duties in a ward to which she is not assigned, and holding such a position is a hallmark of full fellowship.  Another reason for participation in the assigned ward stems from the two levels of church worship in Mormon Theology. The first and most basic form of church worship is the weekly Sunday service, held in local chapels and open to the public. Each ward has its own set of meetings that are managed by the ward members and leaders. The second type of worship occurs in Mormon temples.  Participation in temple worship is limited to members that are in good standing and approved by their ward leaders. One of the requirements for good standing is regular participation in the Sunday services of the ward to which they are assigned. It would be difficult to overstate the importance of temple worship in Mormon theology.
+%
+%    The geographic boudaries of wards are designed to include 300-500 members. In this paper, we focus our attention on Utah County, where approximately 89\% of the population is Mormon. This concentration of church members leads to ward boundaries that enclose very small geographic areas, smaller than most subdivisions.  For this reason, ward boundaries are not typically coincident with subdivision boundaries and major thoroughfares.  Figure 1 illustrates the assignment of parcels to wards for a small region in Utah County.
+%
+%    A second reason ward boundaries are unlikely to coincide with important discontinuities in the spatial distribution of homes is that homogeneity across neighboring wards is an explicit objective of church leaders involved in the specification of ward boundaries.\footnote{Based on the authors' private conversations with church leaders.}  In practice, this means that ward boundaries are likely to cut across neighborhoods.  As an illustration, note that the clusters of very small parcels in Figure 1 are townhouses.  The townhouses complexes are split and combined with neighboring detached residences to form wards similar in mix of property type.
+%
+%    We are able to determine the ward assignment of each property in our sample using the Church's online ward assignment lookup tool.\footnote{Meetinghouse Locator, www.lds.org.} In Table 2, we present summary statistics on neighbors of a typical listing.  The average listing has 36 neighbors in the same ward and 42 neighbors assigned to a different ward.  Neighbors in different wards are, on average 40\% farther away than neighbors assigned to the same ward.  Without conditioning on spatial relationship, a pair of neighbors assigned to the same ward is almost three times more likely to choose the same real estate agent as two neighbors in different wards.
+%
+%    In Table 3, we present summary statistics on on wards and real estate agents. The homes in each ward are listed by a variety of real estate agents, suggesting that real estate agents do not specialize in particular wards.
+%
+%    The distribution of agent activity is highly skewed.  More than half the agents in our sample list only one or two homes.  Agents who listed more than two homes listed on average 21 homes.
+%
+%\section{Estimation and Identification}
+%
+%\subsection*{Empirical Approach}
+%
+%    Our objective is to evaluate how individuals are influenced by members of their social network in selecting a real estate agent to help sell a home. If a home seller learns about real estate agent quality through her social network, then her choice of real estate agent is more likely to be influenced by the choices of neighbors who belong to her social network.
+%
+%    This prediction can arise from both observational learning and direct communication. In the case of purely observational learning, a home seller may notice the real estate agent choice of a neighbor and infer that the peer has private information that the chosen real estate agent is a high quality agent. If the home seller can more easily observe the choice of neighbors who belong to her social network, then she is more likely to choose the same agent as a neighbor if that neighbor belongs to her social network.
+%
+%    Social learning about the quality of real estate agents may also arise through direct communication between peers about personal experience with real estate agents. Depending on the content of the reports from neighbors about real estate agent quality, direct communication may increase or decrease the likelihood that a home seller chooses the same agent as a peer. If such reports tend to be positive, then, on average, home sellers will be more likely to choose the same real estate agent as neighbors who belong to the same social network.
+%
+%    The direct communication hypothesis provides a second prediction. If social learning occurs through direct communication about personal experience with agents, then a home seller is more likely to choose the same agent as a neighbor when the neighbor's experience with the agent was positive. The home seller is less likely to choose the same agent as a neighbor whose experience with his agent was negative. If direct communication is more likely to occur between neighbors who belong to the same social network, then the effect of a neighbor's experience on the home seller's choice of agent will be stronger if they belong to the same social network.
+%    
+%        To evaluate the influence of ward peers on real estate agent choice, we estimate the probability that a home seller chooses the same real estate agent as her neighbor. If ward members learn from each other, then the probability that neighbors choose the same real estate agent should differ depending on whether they are assigned to the same ward. We begin by estimating the following linear probability model:
+%    \begin{equation}
+%        P(i\ and\ j\ choose\ the\ same\ agent) = \alpha + \beta W_{ij} + \gamma_1 D_{ij} + \gamma_2 D^2_{ij}  + \gamma_3 N_{ij} + \epsilon_{ij}
+%    \end{equation}
+%    \noindent where $W_{ij}$ is equal to 1 if homes $i$ and $j$ are in the same ward, $D_{ij}$ is the geographic distance between homes $i$ and $j$, and $N_{ij}$ equals 1 if homes $i$ and $j$ are assigned to the same county-defined neighborhood.  We measure distance in quarter miles so that $D_{ij}$ lies in the interval from zero to one (since we only consider pairs of homes less than a quarter mile apart).
+%
+%    We calculate multi-way cluster-robust standard errors using the method developed by Cameron et al (2007) for this and all specifications.  Observations are on pairs of listings, and each listing in the pair belongs to many different pairs.  We estimate standard errors that are robust to clustering on both listings in the pair.
+%
+%    The estimation results for this specification are reported and discussed in Section 5 below.
+%
+%    To test whether the social learning in this setting arises from word-of-mouth information transmission we estimate the following variation on the
+%    regression in equation (1):
+%    \[ P_{ij} = \alpha + \beta W_{ij} + \gamma_1 D_{ij} + \gamma_2 D^2_{ij} + \gamma_3 N_{ij} + \delta_1 G_j +
+%    \delta_2 B_j + \delta_3 W_{ij} * G_j + \delta_4 W_{ij} * B_j + \epsilon_{ij} \]
+%    where $G_j = 1$ if neighbor $j$ had a good outcome (and therefore has positive information to report) and $B_j = 1$ if neighbor $j$ had a bad
+%    outcome.
+%
+%    The estimation results for this specification are presented in Section 6.
+%
+%\subsection*{Identification}
+%
+%    We want to identify the impact of a neighbor's choice of real estate agent on a home seller's choice of real estate agent.  The principal threat to identification in our setting is what Manski (1995) calls \emph{correlated effects}.  If a home owner's neighbors who are assigned to his ward have homes that are systematically different than the homes of his neighbors who are assigned to different wards, then the effect that we estimate may represent correlations in behaviour due to correlations in unobserved home characteristics.  An example of such an effect is small scale geographic specialization and marketing by agents to particular neighborhoods or types of homes.
+%
+%    Our identifying assumption is that, after we have conditioned on geography, a home owner's intra-ward neighbors are not systematically different from his extra-ward neighbors.
+%
+%    One concern is that ward boundaries may coincide with unobserved discontinuities in the spatial distribution of house characteristics.  Observed discountinuites in house characteristics incluce abrupt changes in house (and resident) characteristics at subdivision boundaries and geographic features like rivers, parks, and major roads.
+%
+%    Ward designers try to ensure homogeneity \emph{across} ward boundaries, so adjacent neighborhoods are likely to be split into wards in a way that assigns some homes from each neighborhood to each ward. Practically, this means that ward boundaries are likely to cut across neighborhoods.
+%
+%    Our identificationion fails if, despite the planners' objectives, there are unobserved neighborhood boundaries that are correlated with ward boundaries and that affect real estate agent selection. We investigate the extent to which this may occur by calculating the absolute difference in observed characteristics for each pair of neighbors and regress out the portion of those differences that are explained by their geographic relationship (distance, distance squared, and whether they are in the same county-defined neighborhood). We then calculate the means of these orthogonalized differences for neighbors in the same ward and for neighbors assigned to different wards and perform a t-test for the equality of those means (See Table 4).
+%
+%    We reject the null hypothesis that the mean differences in observed home characteristics for neighbors assigned to the same ward are equal to the
+%    mean differences for neighbors assigned to different wards. Our large number of observations (over three million pairs of neighbors) means that we only fail to reject the null hypothesis for extremely small differences in the means.
+%
+%    In order to illustrate the magnitude of the difference between the means, we calculate the standard deviation of the distribution of differences of each characteristic for the set of neighbors of each individual listing. So, for example, for each listing $i$ we calculate: \[\sigma_i(Bedrooms) = \sqrt{\frac{1}{J-1}\sum_{j \in J}[(\rm{Bedrooms}_i - \rm{Bedrooms}_j) - \rm{Average \ Deviation}_i]^2}\] where $J$ is the set of all neighbors of $i$ and also the number of elements in the set. We present the median individual standard deviation for each characteristic in Table 4. The largest difference between the means is less than 5\% of the mean difference between homes and is less than 5\% of the median individual standard deviation. The differences of means for the other characteristics are even smaller proportions.
+%
+%\section{Evidence of Social Learning in Wards}
+%
+%    The results from estimating equation 1, reported in Table 5, suggest that a home seller is substantially more likely to choose the same real estate agent as her neighbor if they are assigned to the same ward.  For an intermediate distance (one eighth of a mile, distance = .5), the probability that the home seller chooses the same agent as her neighbor is 1.4\% if they are assigned to different wards and 2.4\% if they are assigned to the same ward.
+%
+%    The distance between two neighbors is an important determinant of the probability that they choose the same real estate agent. As mentioned in the introduction, the importance of the ward social network can be described in terms of the change in geography that will offset a ward relationship.  For example, to be as influential as a ward neighbor that is 400 feet away, a non-ward neighbor must be 30\% closer. Similarly, a ward neighbor 900 feet away is as influential as a non-ward neighbor that is 35\% closer.
+%
+%    As additional evidence that our specification does not suffer from an omitted variable bias, we present the results from a long regression that includes differences in observed characteristics.\footnote{See Table 4 for the list of characteristics that are included.} If we have omitted a relevant neighborhood definition that is correlated with the ward definitions, then our estimate of $\beta$ will be biased. A neighborhood boundary is a discontinuous change in home characteristics, so the differences in home characteristics between two neighbors should be correlated with any omitted neighborhood definition (the differences should be larger for neighbors on opposite sides of the boundary). Including these differences in our regression, then, should attenuate any omitted variable bias. As column 4 of Table 5 shows, however, our estimate of the ward effect in this long regression is the same as the estimate from the short regression in column 3.
+%
+%    Census blocks are small neighborhoods bounded by geographic features (like roads, streams, and railroad tracks) and political boundaries (like city limits and property lines). In urban areas, the census block is often the same as the city block.\footnote{This description of the census block definition is based largely on information available from the US Census Bureau, www.census.gov} The way the census blocks are defined means that homes in the same block are likely to be very similar in unobserved characteristics. In column 7 of Table 5, we present estimates of equation 1 on a subsample restricted to neighbors in the same census block. The persistence of the ward effect is additional evidence that our results are not due to bias from some omitted neighborhood definition.
+%
+%    Figure 2 illustrates that the geographic distribution of neighbors in the same ward differs significantly from that of neighbors in different wards. Neighbors in the same ward tend to be nearer to each other and the nearest neighbors are very likely to be assigned to the same ward. We are careful about how we control for the geographic relationship to ensure that the estimated ward effect is not an artifact of the spatial relationships between neighbors. We demonstrate in columns 5 and 6 of Table 5 that our estimation of $\beta$ is not sensitive to the specification of the distance effect: it does not change when we include either a sixth degree polynomial (column 5) or a set of dummy variables representing a fine partition of the distances (0 to 33 feet, 34 to 66 feet, etc.).
+%
+%    We also estimate equation 1 on a subsample of our data that excludes the nearest neighbors (where the vast majority are in the same ward) and the most distant neighbors (where the majority are assigned to different wards). Column 8 presents estimates when we restrict attention to neighbors that are no less than 400 feet apart and no more than 900 feet apart (distance $\in (.3,.7)$). Our estimate of $\beta$ on this subsample is slightly larger than the estimate from the full sample, offering additional evidence that the geographic relationships do not drive our estimates of the ward effect.
+%
+%\section{Social Learning Via Direct Communication}
+%    We have offered evidence of social influence on real estate agent choice within wards.  We now address the source of this influence. If home sellers are learning from peers only by observing choices and making inference about private information, then the choices of peers with identical characteristics will have identical influence. If, however, peers are communicating directly, then a home seller's choices may respond to a peer's private information, including information about outcomes.
+%
+%    Home sellers prefer a higher sales price, all else equal. If they are learning from their peers, they are more likely to choose the same real estate agent as a neighbor if that agent sold the neighbor's house for a high price relative to the seller's ex ante expectations and less likely to choose him if he sold the house for a low price relative to expectations.  For each transaction, we calculate the percent difference between sales price and list price. We categorize transactions in the top decile of the distribution of percent difference as \emph{very high price} and transactions in the bottom decile as \emph{very low price}. We then analyze how these outcomes affect peer influence. The results are in column 1 of table 6.
+%
+%    We find effects for peers with intermediate outcomes that are similar to the effects in the baseline specification. In addition, for neighbors in the same ward we find a large premium associated with a very high price and a large penalty for a very low price. The additional influence of ward members with very high prices is double that of those with intermediate outcomes and the penalty from a very low price almost cancels the ward effect completely.
+%
+%    We modify our categorization of outcomes by considering different cutoffs for the definitions of \emph{very high price} and \emph{very low price}. In column 2 of Table 6 we define these outcomes using the top and bottom quartiles of the distribution of deviations. In column 3 we use the ninety-fifth and fifth percentiles. We find that the impact of good information is smaller with the lower threshold and larger with the higher threshold. While the impact of bad information increases slightly with the higher threshold definition, it does not change with the bottom quartile definition of column 2.
+%
+%    The markup over list price might reflect market conditions that may influence whether two neighbors select the same real estate agent. The specification in column 4 of Table 6 includes dummy variables for the year that each of the neighbors listed her home. We use the same definitions of \emph{very high price} and  \emph{very low price} as in column 1 (the top and bottom deciles). Our estimate of the impact of good information outside the ward decreases substantially (0.9 to 0.3), but the impact of good information in the ward changes very little (1.4 to 1.3) and the impact of bad information in the ward doesn't change at all.
+%
+%    We also consider an alternative definition of outcome. We estimate a linear hedonic model of the natural log of sales price using the observed characteristics of homes and times and ward fixed effects. We then use the deviations from the predicted values (the residuals from the hedonic regression) to categorize outcomes. In column 5 of Table 6, we say that a home sells for a \emph{very high price} if the difference between log sales price from the predicted log sales price is in the top decile of its distribution. We say that it sells for a \emph{very low price} if it is in the bottom decile of its distribution. Column 7 of Table 6 uses the ninety-fifth and fifth percentiles. The qualitative results are not sensitive to the benchmark used - the estimates from column 5 are very similar to those in column 1.
+%
+%\section{Conclusion}
+%    We have presented evidence of word-of-mouth learning in a social network.  The principal challenges to identification of this type of social effect are distinguishing which individuals are peers and separating social effects from correlations in behavior of peers that arise from unobserved similarities.\footnote{See Manski (2000).}  We address both of these issues by taking Mormon wards as our setting.  The ward constitutes a social network for which the group composition is known and for which we can construct a control group of individuals who differ essentially from ward members only in their ward assignment.
+%
+%    The results that we present suggest that social learning plays a role in a home seller's selection of an agent to assist in an important transaction.  We have also presented evidence that personal referrals are part of this social learning.  It seems unlikely that this phenomenon is particular to Mormon wards.  Congregations in other denominations and other types of social networks (school, athletic, service, etc) may function in similar ways.
+%
+%    We have exploited the geographic assignment of Mormons to congregations to identify social effects in real estate agent choice.  There are many other decisions of economic importance that may be subject to social effects.  The natural experiment investigated here holds promise for identifying social effects in many such decisions.
+%
+%
+%\pagebreak
+%
+%
+%\begin{table}[ht]
+%    \begin{center}
+%    \caption{Summary Statistics of Homes}
+%    \begin{tabular}{@{}lccc@{}} \toprule
+%        Variable        & Mean      & Standard Deviation    & Median \\ \midrule
+%        List Price      & \$216,065 & \$125,632             & \$174,900 \\
+%        Square Feet     & 2,675     & 1,255                 & 2,416 \\
+%        Acres           & 0.35      & 1.0                   & 0.22 \\
+%        Bedrooms        & 3.9       & 1.2                   & 4 \\
+%        Bathrooms       & 2.5       & 1.0                   & 2 \\
+%        Garage Capacity & 1.5       & 0.80                  & 2 \\
+%        Patios          & 0.46      & 0.50                  & 0 \\
+%        Decks           & 0.28      & 0.45                  & 0 \\
+%        Wet Bars        & 0.40      & 0.52                  & 0 \\
+%        Fire Places     & 0.64      & 0.76                  & 0 \\
+%        Year Built      & 1984      & 23                    & 1994 \\
+%        Sold Indicator  & 0.59      & 0.49                  & 1 \\
+%        Sold Price      & \$192,833 & \$99,903              & \$163,000 \\ \bottomrule
+%    \end{tabular}
+%    \begin{minipage}{.88\hsize}
+%    {\footnotesize Note -- Data are from the Wasatch Front Regional Multiple Listing Service and include single family residences listed in Utah County between 1997 and 2007.}
+%    \end{minipage}
+%    \end{center}
+%\end{table}
+%
+%\begin{sidewaystable}[ht]
+%
+%    \centering
+%    \caption{Summary Statistics of Neighbors}
+%    \begin{tabular}{@{}lcccc@{}} \toprule
+%        Mean\\
+%
+%        \se{Standard Deviation}   & In Ward & Out of Ward & In Census Block   & In Neighborhood \\
+%        Median\\
+%        \midrule
+%        \multirow{3}{*}{Number of Neighbors}        & 36      & 42          & 20                & 52 \\
+%                                                    & \se{29} & \se{34}          & \se{37}                & \se{44} \\
+%                                                    & 29      & 35          & 8                 & 43 \\\addlinespace
+%        \multirow{3}{*}{Percent of Neighbors}       & 49      & 51          & 23                & 64 \\
+%                                                    & \se{23} & \se{23}          & \se{25}                & \se{30} \\
+%                                                    & 45      & 55          & 13                & 73 \\\addlinespace
+%        \multirow{3}{*}{Distance Between Neighbors} & 0.49    & 0.71        & 0.48              & 0.58 \\
+%                                                    & \se{0.25}     & \se{0.21}         & \se{0.26}                & \se{0.26} \\
+%                                                             & 0.47     & 0.75        & 0.46                 & 0.59 \\ \addlinespace
+%        \multirow{3}{*}{Percent that Chose the Same Agent}   & 2.8\%    & 1.0\%       & 3.0\%             & 2.5\% \\
+%                                                             & \se{9.9}      & \se{4.6}         & \se{11}                & \se{9.8} \\
+%                                                             & 0        & 0           & 0                 & 0 \\
+%        \bottomrule
+%    \end{tabular}
+%        \begin{minipage}{.88\hsize}
+%{\footnotesize Note -- Geographic location of properties from Google Maps. Ward affiliation from www.lds.org. Neighborhood definition from the Utah County Assessor's Office. Census Block data from the US Census Bureau (TigerLine).  Two Homes are ``neighbors'' if they are located within a quarter mile and sold within five years of each other. Distance is measured in quarter miles.}
+%\end{minipage}
+%\end{sidewaystable}
+%
+%\begin{table}[ht]
+%    \centering
+%    \caption{Summary Statistics of Wards and Agents}
+%    \begin{tabular}{@{}lccc@{}} \toprule
+%        Variable                    & Mean  & Standard Deviation    & Median \\ \midrule \addlinespace
+%        \bf{Ward} \\\cmidrule(r{2cm}){1-1}
+%        (N = 832) \\
+%        Number of Listings          & 72    & 42                    & 63 \\
+%        Number of Agents            & 51    & 26                    & 48 \\
+%        Listings per Agent          & 1.3   & 1.0                   & 1  \\ \addlinespace
+%        \bf{Agent} \\\cmidrule(r{2cm}){1-1}
+%        (N = 5904) \\
+%        Number of Listings          & 10    & 31                    & 2 \\
+%        Number of Wards             & 7     & 19                    & 2 \\
+%        Listings per Ward           & 1.3   & 1.0                   & 1 \\ \addlinespace
+%        \bf{Agent with at least three listings} \\\cmidrule(r{2cm}){1-1}
+%        (N = 2649) \\
+%        Number of Listings          & 21    & 44                    & 7 \\
+%        Number of Wards             & 14    & 27                    & 6 \\
+%        Listings per Ward           & 1.5   & 1.5                   & 1.2 \\ \bottomrule
+%    \end{tabular}
+%\end{table}
+%
+%
+%
+%\begin{table}[ht]
+%\centering
+%\caption{Differences in Characteristics Across Neighbors}
+%\begin{tabular}{@{}lcccccccc@{}} \toprule
+%Variable        & Out   & In    & Difference   & t-stat   & Standard Deviation\\\midrule
+%Log Square Feet & 0.261 & 0.255 & 0.006        & 17.5     &  0.201\\
+%Bedrooms        & 1.005 & 0.989 & 0.016        & 13.9     &  0.796\\
+%Bathrooms       & 0.707 & 0.700 & 0.008        & 8.6      &  0.601\\
+%Year Built      & 8.373 & 8.025 & 0.348        & 20.9     &  7.538\\
+%Log List Price  & 0.258 & 0.261 & -0.003       & -10.2    &  0.163\\
+%Log Acres       & 0.562 & 0.566 & -0.004       & -6.5     &  0.292\\
+%Garage Capacity & 0.490 & 0.471 & 0.019        & 21.8     &  0.532\\
+%Fireplaces      & 0.404 & 0.398 & 0.006        & 8.8      &  0.507\\
+%Wet Bars        & 0.420 & 0.418 & 0.002        & 3.3      &  0.489\\
+%Deck            & 0.299 & 0.296 & 0.003        & 5.5      &  0.430\\
+%Patio           & 0.450 & 0.441 & 0.009        & 15.7     &  0.494\\\bottomrule
+%\end{tabular}
+%\begin{minipage}{.88\hsize}
+%{\footnotesize Note -- We calculate the absolute difference in observed characteristics for each pair of neighbors. We regress out the portion of this difference that is explained by their geographic relationship (distance, distance squared, and whether they are in the same county-defined neighborhood). We present the mean of these orthogonalized differences in characteristics for neighbors in different wards and neighbors in the same ward. We present the     t-statistic for a test that the means are equal. We also calculate the standard deviation of the differences for each individual property. For example,  $ \sigma_i(\rm{Beds}) = sqrt(\sum_{j \in J}[(Beds_i - Beds_j) - (\sum_{j \in J}[Beds_i - Beds_j])/\#J]^2)$  where $J = \{$All neighbors if $i\}$. We present the median standard deviation for each characteristic to illustrate the variation between a typical listing and its neighbors.}
+%\end{minipage}
+%\end{table}
+%%
+%\begin{figure}
+%    \centering
+%    \caption{Ward assignment of homes in a Utah County neighborhood.}
+%    \includegraphics[width=6in]{imthemap.pdf}
+%
+%\end{figure}
+%\begin{figure}
+%    \centering
+%    \caption{Histogram of Distances between neighbors in the same and in different wards.}
+%    \includegraphics[width=6in]{Distance_Histograms.png}
+%
+%\end{figure}
+%
+%
+%\begin{sidewaystable}[ht]
+%\centering
+%\caption{Linear Probability Model - Social Effects}
+%\begin{tabular}{@{}lccccccccc@{}} \toprule
+%Variable                                 &(1)      &(2)      &(3)      &(4)      &(5)      &(6)      &(7)      &(8)      & (9)     \\\midrule
+%\multirow{2}{*}{In the Same Ward}        &1.2**    &1.9**    &1.0**    &1.0**    &1.0**    &1.0**    &1.5**    &1.1**    & 0.8**   \\
+%                                         &\se{0.05}&\se{0.05}&\se{0.05}&\se{0.05}&\se{0.05}&\se{0.05}&\se{0.12}&\se{0.06}&\se{0.04}\\
+%In the Same                              &         &0.6**    &0.3**    &0.03     &0.3**    &0.3**    &0.9**    &0.4**    & 0.2**   \\
+%\hspace{.5cm}Neighborhood                     &         &\se{0.05}&\se{0.05}&\se{0.04}&\se{0.04}&\se{0.04}&\se{0.14}&\se{0.07}&\se{0.04}\\
+%Distance                                 &-17.9**  &         &-15.9**  &-13.7**  &         &         &-15.9**  &-7.5**   &-14.3**  \\
+%\hspace{.5cm}(in 1/4 Miles)              &\se{0.52}&         &\se{0.50}&\se{0.46}&         &         &\se{0.74}&\se{1.40}&\se{0.49}\\
+%\multirow{2}{*}{Distance$^2$ }           &11.6**   &         &10.5**   &9.2**    &         &         &10.1**   &4.3**    &9.5**    \\
+%                                         &\se{0.38}&         &\se{0.36}&\se{0.34}&         &         &\se{0.62}&\se{1.33}&\se{0.36}\\
+%In the Same                              &         &         &         &         &         &         &         &         & 1.3**   \\
+%\hspace{.5cm} Census Block               &         &         &         &         &         &         &         &         &\se{0.07}\\
+%Difference in Observed&&&            & Yes &&&         &         &              \\
+%\hspace{.5cm} Characteristics\\
+%Distance Polynomial &         &         &         &             &Yes &  &  &  &                  \\\addlinespace
+%Distance Dummies                  &  &  &         &         &             &Yes &         &  &    \\\addlinespace
+%\multirow{2}{*}{Constant}                &7.5**    &0.6**    &6.4**    &8.2**    &13.2**   &11.2**   &6.4**    &3.7**    & 5.7**   \\
+%                                         &\se{0.18}&\se{0.04}&\se{0.17}&\se{0.20}&\se{0.57}&\se{0.54}&\se{0.26}&\se{0.36}&\se{0.17}\\\midrule
+%N          &\fn{3,604,384}&\fn{3,029,737}&\fn{3,029,737}&\fn{2,861,739}&\fn{3,029,737}&\fn{3,029,737}&\fn{871,981}&\fn{1,322,795}&\fn{3,029,737}\\
+%R$^2$                       &\fn{0.014}&\fn{0.005}&\fn{0.012}&\fn{0.017}&\fn{0.012}&\fn{0.012}&\fn{0.012}&\fn{0.003}&\fn{0.013}   \\\bottomrule
+%\end{tabular}
+%\begin{minipage}{.88\hsize}
+%{\footnotesize
+%    Linear Probability Model - Social Effects
+%    Parameter estimates from $y_{ij} = X_{ij}\beta + \varepsilon_{ij}$
+%    where $y_{ij} = 1$ if neighbors $i$ and $j$ choose the same real estate agent to list their homes.
+%    Specification (4) includes the differences in all the observed characteristics listed in Table 4. (5) and (6) allow for a more flexible specification of distance by considering, respectively, a sixth degree polynomial and a set of 40 distance categories (0 to $\frac{1}{40}$ of a quarter mile, $\frac{1}{40}$ to $\frac{2}{40}$, etc.).
+%    We also consider the sub-samples of (7) only neighbors in the same census block and (8) only neighbors that are between 400 and 900 feet apart.  All standard errors are robust to clustering on the identity of each listing in the pair of neighbors.}
+%\end{minipage}
+%\end{sidewaystable}
+%
+%
+%\begin{sidewaystable}[ht]
+%\centering
+%\caption{Linear Probability Model - Information}
+%
+%\begin{tabular}{@{}lcccccccc@{}} \toprule
+%Variable                                 & (1)       & (2)       & (3)       & (4)       & (5)       & (6)   \\\midrule
+%\multirow{2}{*}{In the Same Ward}        & 1.2**     & 1.3**     & 1.2**     & 1.2**     & 1.1**     & 1.074**\\
+%                                         & \se{0.05} & \se{0.06} & \se{0.05} & \se{0.05} & \se{0.05} & \se{0.051}\\
+%\multirow{2}{*}{Distance (in 1/4 Miles)} & -17.8**   & -17.8**   & -17.8**   & -17.2**   & -17.9**   & -17.9**\\
+%                                         & \se{0.52} & \se{0.52} & \se{0.52} & \se{0.49} & \se{0.52} & \se{0.52}\\
+%\multirow{2}{*}{Distance$^2$ }           & 11.6**    & 11.6**    & 11.6**    & 11.2**    & 11.6**    & 11.6**\\
+%                                         & \se{0.37} & \se{0.37} & \se{0.37} & \se{0.36} & \se{0.37} & \se{0.37}\\
+%\multirow{2}{*}{Very High Price}         & 0.9**     & 0.2**     & 0.3*      & 0.3**     & 0.6**     & 0.7**\\
+%                                         & \se{0.09} & \se{0.06} & \se{0.13} & \se{0.09} & \se{0.08} & \se{0.10}\\
+%\multirow{2}{*}{Very Low Price}          & 0.1       & 0.1       & 0.2       & 0.1       & -0.03     & -0.2*\\
+%                                         & \se{0.09} & \se{0.05} & \se{0.15} & \se{0.09} & \se{0.07} & \se{0.08}\\
+%\multirow{2}{*}{Ward * Very High Price}  & 1.4**     & 0.5**     & 2.5**     & 1.3**     & 1.3**     & 1.6**\\
+%                                         & \se{0.21} & \se{0.14} & \se{0.33} & \se{0.21} & \se{0.17} & \se{0.18} \\
+%\multirow{2}{*}{Ward * Very Low Price }  & -1.0**    & -1.0**    & -1.1**    & -1.0**    & -0.8**    & -1.0**\\
+%                                         & \se{0.14} & \se{0.10} & \se{0.18} & \se{0.13} & \se{0.16} & \se{0.18}\\\addlinespace
+%Time Dummies            &           &           &           & Yes       &           &\\\addlinespace
+%\multirow{2}{*}{Constant}                & 7.4**     & 7.4**     & 7.4**     & 14.9**    & 7.4**     & 7.4**\\
+%                                         & \se{0.17} & \se{0.18} & \se{0.17} & \se{0.98} & \se{0.17} & \se{0.17}\\\midrule
+%N                                        & 3,604,384 & 3,604,384 & 3,604,384 & 3,604,384 & 3,604,384 & 3,604,384\\
+%R$^2$                                    & 0.014     &  0.014    & 0.014     &  0.031    &  0.015    & 0.015 \\\bottomrule
+%\end{tabular}
+%\begin{minipage}{.88\hsize}{\footnotesize
+%    Results from linear probability model:  $y_{ij} = X_{ij} \beta + \varepsilon_{ij}$  where $y_{ij} = 1$ if neighbors $i$ and $j$ chose the same real estate agent.   We consider various definitions of ``very high price'' and ``very low price.'' Columns (1) - (3) use deviations from list price  ($ln(\rm{Sales Price} - ln(\rm{List Price})$): column (1) defines ``very high price'' as a price in the top decile of the distribution of   deviations from list price and a ``very low price'' as one in the bottom decile. Columns (2) and (3) use the top and bottom quartiles and the top   and bottom five percentiles respectively. Specification (4) uses the same definition as column (1) but also includes year fixed effects for each   of the neighbors.    (5) and(6) use the predicted price from a hedonic regression of $ln(\rm{Sales Price})$ on the home's observed characteristics, including dummies  for the year and ward, as the benchmark price. So, in (5) a ``very high price'' is $ln(\rm{Sales Price}) - ln(\rm{Sales Price})$ in the top decile of the distribution. Column (6) uses the top and bottom five percentiles.
+%}
+%\end{minipage}
+%\end{sidewaystable}
+%\end{document}
+%
