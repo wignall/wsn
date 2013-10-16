@@ -1,7 +1,4 @@
-Graton
-Oct 16 2013
-
-The raw WFRMLS listings data are stored as a 320M collection of gzip'ed csv files (with no file extension). A copy of these files is saved in /backup/wsn/data/wfrmls/raw/listings. The files each contain listings for the date indicated in the filename. Each file contains records of listings with the listing date indicated in the filename. Where the number of listings on a given date are greater than 200, the records for that date are stored in multiple files. 
+The raw WFRMLS listings data are stored as a 320M collection of gzip'ed csv files (with no file extension). Copies of these files are saved in /backup/wsn/data/wfrmls/raw/listings. These files each contain listings for the date indicated in the filename. Each file contains records of listings with the listing date indicated in the filename. In cases where the number of listings on a given date is greater than 200, the records for that date are stored in multiple files (see Section 1 below). 
 
 Property Activity Reports and additional data on agents and offices are saved in folders par/, agents/, and offices/, respectively, in /backup/wsn/data/wfrmls/raw/.  
 
@@ -11,4 +8,10 @@ The following section explains how these data were procured. The subsequent sect
 
 All of these data came from wfrmls.com by permission of the CEO of WFRMLS. We were provided a user account with which we excecuted queries to "scrape" information from the database underlying the website. Our access to the website expired at the end of July 2008.  
 
-The first step in this process was to create a complete list of all of the listing identifiers. The was accomplished using the script in procure_listnums.pl (in the wsn repository in /programs/wfrmls/listing_ids/).  
+The first step in the data scraping was to create a complete list of all of the listing identifiers. This was accomplished using the script in procure_listnums.pl (in the wsn repository in /programs/wfrmls/listing_ids/). The program makes use of the calendar file cal (also stored in the repository). The results of this program are a collection of gzip'ed files containing lists of listing identifers (listno's). Copies of these files are saved in /backup/wsn/data/wfrmls/raw/listing_ids/. The program also produced a list of queries that failed. I (Graton) believe that these were all dealt with, but small amount of effort could verify that all queries were successful. There are some files in a folder called redone2 that may actually need to to be folded into the full collection. 
+
+The second step in the process was to query the wfrmls.com web server for information on each of the listnos in each set of listnos. This was accomplished with the script in captcha08.pl.  This is the script that procured the files in /backup/wsn/data/wfrmls/raw/listings/.  I (Graton) believe that I verfied at the time that there had been a successful listing-information query for each set of listno's.  Worth double checking.
+
+2. Creation of MySQL tables. 
+
+ 
